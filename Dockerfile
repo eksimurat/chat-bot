@@ -1,20 +1,18 @@
-# build environment
-FROM node:11.4.0 as builder
+# base image
+FROM node:11.4.0
+
+# set working directory
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
+
+# add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+# install and cache app dependencies
 COPY package.json /usr/src/app/package.json
 RUN npm install --silent
-RUN npm install react-scripts@1.1.1 -g --silent
-COPY . /usr/src/app
-RUN npm run build
+RUN npm install api-ai-javascript --save-dev --silent
+# RUN npm install react-scripts@1.1.1 -g --silent
 
-
-
-# production environment
-FROM nginx:1.13.9-alpine
-RUN rm -rf /etc/nginx/conf.d
-COPY conf /etc/nginx
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# start app
+CMD ["npm", "start"]
