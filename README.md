@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Ideal way to start working on this project is to run the docker-compose script and work on it this way.
 
+### `docker-compose up -d`
+
+Once you build and run the project, just run it without "--build" for a faster start-up if you stop the process.
+
 ## Available Scripts
 
 In the project directory, you can run:
