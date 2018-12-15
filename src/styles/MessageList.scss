@@ -1,0 +1,28 @@
+@import "./Variables.scss";
+$itemWidth : 50vw;
+.message{
+    text-align: center;
+    font-size: 5vh;
+    margin-top: 25vh;
+}
+
+.message-holder{
+        margin: auto;
+        width: 100vw;
+        background: $color-input;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px 20px $color-input;
+        
+        @media (min-width: 768px) {
+            font-size: 40px;
+            height: 50px;
+            width: $itemWidth;
+        }
+        
+        @media (max-width: 768px) {
+            $itemWidth : 90vw;
+            font-size: 25px;
+            height: 30px;
+            width: $itemWidth;
+        }
+}
