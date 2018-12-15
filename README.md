@@ -1,8 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Docker
+
+### `docker-compose up -d --build`
+
+Ideal way to start working on this project is to run the docker-compose script and work on it this way.
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+
 
 ### `npm start`
 
